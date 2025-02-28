@@ -7,7 +7,7 @@ Add layers, toggle them using tags easily
 Here is a short snippet of the package in action:
 ```typ
 #import "@preview/lasagna:0.1.0": *
-#let layer = view-layer(tags: ("shown"))
+#let layer = view-layer(tags: ("shown"), prefix: none)
 
 This is always shown
 #layer("hidden")[
@@ -30,7 +30,7 @@ Here are some examples on how this package can be utilized.
     // use comments to toggle the layers
     "ans-space",
     // "ans",
-))
+), prefix: none)
 
 Question 1: What is 2+2?
 #layer("ans")[
@@ -48,7 +48,7 @@ Question 1: What is 2+2?
 #import "@preview/big-todo:0.2.0": todo
 #let layer = view-layer(tags: (
     "todo"
-))
+), prefix: none)
 #let old-todo = todo
 #let todo(..args) = layer("todo", old-todo(..args))
 ```
