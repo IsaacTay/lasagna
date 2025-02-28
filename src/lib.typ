@@ -3,6 +3,8 @@
   if type(shown-tags) == str {
     shown-tags = (shown-tags, )
   }
+  shown-tags = shown-tags.map(t => prefix + t)
+
   let has-common(array1, array2) = array1.filter((elem1) => {array2.contains(elem1)}).len() > 0
 
   let layer(tags, body) = {
