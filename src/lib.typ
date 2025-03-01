@@ -17,28 +17,7 @@
     if has-common(tags, shown-tags) {
       return metadata(tags) + body
     }
-    else {
-      let new-body = []
-      if not body.has("children") {
-        return
-      }
-      for b in body.children {
-        if not b.has("children") {
-          continue
-        }
-        let children = b.at("children")
-        if children.len() == 0 {
-          continue
-        }
-        let potential-tag = children.first()
-        if potential-tag.func() == metadata and has-common(potential-tag.value, shown-tags) {
-          new-body += [
-            #b
-          ]
-        }
-      }
-      return new-body
-    }
+    return none
   }
 
   return layer
