@@ -10,16 +10,15 @@ Here is a short snippet of the package in action:
 #let layer = view-layer(tags: ("shown"))
 
 This is always shown
-#layer("hidden")[
-    So this is hidden
-]
-#layer("shown")[
-    And this is shown
-]
-#layer(("shown", "another-tag"))[
-    You can also assign multiple tags, as long as 1 tag matches it will be shown
-]
+
+#layer("hidden")[So this is hidden]
+
+#layer("shown")[And this is shown]
+
+#layer(("shown", "another-tag"))[You can also assign multiple tags, as long as 1 tag matches it will be shown]
 ```
+
+You may also utilize `true`/`false` for the tags to include/exclude everything respectively.
 
 ## Usage
 Here are some examples on how this package can be utilized.
@@ -33,12 +32,8 @@ Here are some examples on how this package can be utilized.
 ))
 
 Question 1: What is 2+2?
-#layer("ans")[
-    4
-]
-#layer("ans-space")[
-    #v()
-]
+#layer("ans")[4]
+#layer("ans-space")[____]
 
 ```
 
